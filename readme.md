@@ -2,7 +2,7 @@
 
 ## Purpose :
 
-### It provides a simple example of how to create AWS instance using terraform.
+- It provides a simple example of how to create AWS instance using terraform.
 
 ## How to install terraform : 
 
