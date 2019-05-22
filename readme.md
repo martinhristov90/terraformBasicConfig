@@ -6,7 +6,8 @@
 
 ## How to install terraform : 
 
-- The information about installing terraform can be found on the HashiCorp website [here](https://learn.hashicorp.com/terraform/getting-started/install.html)
+- The information about installing terraform can be found on the HashiCorp website 
+[here](https://learn.hashicorp.com/terraform/getting-started/install.html)
 
 ## How to use it :
 
