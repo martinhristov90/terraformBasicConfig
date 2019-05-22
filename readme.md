@@ -11,16 +11,33 @@
 
 ## How to use it :
 
-- In a directory of your choice, clone the github repository with `git clone https://github.com/martinhristov90/terraformBasicConfig.git`
-- Change into the directory using : `cd terraformBasicConfig`
-- It is good practice to have a separate user that Terraform is going to perform actions with, more information how to create a user in AWS,(here)[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html]
+- In a directory of your choice, clone the github repository 
+```
+git clone https://github.com/martinhristov90/terraformBasicConfig.git
+```
+
+- Change into the directory
+```
+cd terraformBasicConfig
+```
+
+- It is good practice to have a separate user that Terraform is going to perform actions with, more information [how to create a user in AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)
+
+- set AWS credentials as environemental variables, as decribed [here](https://www.terraform.io/docs/providers/aws/index.html#environment-variables)
+
+```
+export AWS_ACCESS_KEY_ID="anaccesskey"
+export AWS_SECRET_ACCESS_KEY="asecretkey"
+```
+
 - Use your favorite text editor to modify the file `main.tf`. Set the following values : 
-    - `access_key` - This would be your access key provided by AWS.
-    - `secret_key` - This would be your secret key provided by AWS.
     - `region`     - This is the region where the instance is going to be deployed.
     - `subnet_id`  - Sets the subnet in which the instance is going to be attaced.
     - `vpc_security_group_ids` - Sets the ID of the security group.
-- After all the values of the variables are set correctly, go ahead and execute `terraform init`. The output should look like this :
+    
+- After all the values of the variables are set correctly, go ahead and execute `terraform init`. 
+The output should look like this :
+
     ```shell
         --- SNIP ---
 
@@ -30,8 +47,10 @@
 
         --- SNIP ---
     ```
+    
 - Now, Terraform has downloded the AWS provider for you automatically.
 - To preview what is going to happen without actually performing any actions, execute `terraform plan`. The output should look like this :
+
     ```shell
             Refreshing Terraform state in-memory prior to plan...
         The refreshed state will be used to calculate this plan, but will not be
@@ -71,6 +90,7 @@
         "terraform apply" is subsequently run.
         
     ```
+    
 - If everything looks good, execute `terraform apply` to actually provision the resources defined in `main.tf`.
 - Now you should have a running instance in AWS.
 
